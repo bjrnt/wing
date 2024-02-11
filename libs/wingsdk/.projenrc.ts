@@ -63,8 +63,8 @@ const project = new cdk.JsiiProject({
     ...sideLoad,
     // preflight dependencies
     "safe-stable-stringify",
-    // aws client dependencies
-    // change `AWS_SDK_VERSION` to update clients
+    // aws sdk client dependencies
+    // change `AWS_SDK_VERSION` to update all at once
     "@aws-sdk/client-cloudwatch-logs",
     "@aws-sdk/client-dynamodb",
     "@aws-sdk/client-elasticache",
@@ -75,6 +75,7 @@ const project = new cdk.JsiiProject({
     "@aws-sdk/client-sqs",
     "@aws-sdk/s3-request-presigner",
     "@aws-sdk/util-dynamodb",
+    // aws other client dependencies
     "@smithy/util-stream@2.0.17",
     "@smithy/util-utf8@2.0.0",
     "@types/aws-lambda",
