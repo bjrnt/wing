@@ -143,7 +143,12 @@ const project = new cdk.JsiiProject({
   jsiiVersion: "~5.3.11",
 });
 
-// Pin AWS SDK version and keep deps in sync
+/**
+ * Pin AWS SDK version and keep deps in sync
+ *
+ * Note: `@aws-sdk/types` is excluded since it gets updated independently
+ *       and its version may not match that of the AWS SDK clients
+ */
 project.deps.all
   .filter(
     (dep) => dep.name.startsWith("@aws-sdk/") && dep.name !== "@aws-sdk/types"
